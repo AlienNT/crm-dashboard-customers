@@ -9,20 +9,20 @@ import user from "./src/store/user.js";
 
 const options = {localImports: true}
 const locals = {
-    name: 'Test Name',
     customers,
     navigation,
     user
 }
 
-export default defineConfig(({mode, command} )=> {
-
- return {
-     plugins: [pugPlugin(options, locals)],
-     css: {
-         postcss: {
-             plugins: [autoprefixer]
-         }
-     }
- }
+export default defineConfig(({command}) => {
+    const base = command === 'build' ? '/crm-dashboard-customers/' : '/';
+    return {
+        plugins: [pugPlugin(options, locals)],
+        css: {
+            postcss: {
+                plugins: [autoprefixer]
+            }
+        },
+        base
+    }
 })
