@@ -23,6 +23,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 15px;
 
   @media #{$breakpointMedium} {
     border-bottom: 1px solid rgb(238, 238, 238);
@@ -60,6 +62,11 @@
   align-items: center;
   padding-left: 10px;
   cursor: pointer;
+  
+  @media #{$breakpointSmall} {
+    max-width: 100%;
+    flex: 100%;
+  }
 
   @media #{$isMouseDevice} {
     transition: .2s ease;
