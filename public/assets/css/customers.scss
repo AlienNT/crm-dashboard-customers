@@ -1,0 +1,232 @@
+.customers {
+  border-radius: 30px;
+  box-shadow: 0 10px 60px 0 rgba(226, 236, 249, 0.5);
+  background: rgb(255, 255, 255);
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+
+  @media #{$breakpointMedium} {
+    padding: 15px 0;
+    .customer {
+      padding: 15px 0;
+    }
+    .customers-list__fields {
+      display: none;
+    }
+  }
+}
+
+.customers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+
+  @media #{$breakpointMedium} {
+    border-bottom: 1px solid rgb(238, 238, 238);
+    margin-bottom: 0;
+    padding-bottom: 15px;
+  }
+}
+
+.customers-title {
+  color: rgb(0, 0, 0);
+  font-family: Poppins, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 33px;
+  margin-bottom: 7px;
+
+  @media #{$breakpointMedium} {
+    font-size: 16px;
+    line-height: 100%;
+  }
+}
+
+.customers-description {
+  color: rgb(22, 192, 152);
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.customers-search {
+  border-radius: 10px;
+  display: flex;
+  background: rgb(249, 251, 255);
+  align-items: center;
+  padding-left: 10px;
+  cursor: pointer;
+
+  @media #{$isMouseDevice} {
+    transition: .2s ease;
+
+    &:hover {
+      box-shadow: 0 0 4px 2px darken(rgb(249, 251, 255), 5%);
+    }
+  }
+
+  input {
+    all: unset;
+    padding: 10px;
+    display: block;
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &::placeholder {
+      color: rgb(181, 183, 192);
+      font-family: Poppins, sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      transition: .2s ease;
+    }
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("/assets/img/icons/search.svg") no-repeat center / contain;
+  }
+}
+
+.customers-list__item {
+  min-height: 69px;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.customers-list__item .customer,
+.customers-list__fields {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  align-items: center;
+}
+
+.customers-list__item .customer {
+  @media #{$breakpointMedium} {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  @media #{$breakpointSmall} {
+    gap: 5px;
+  }
+}
+
+.customers-list__fields,
+.customers-list,
+.customers-paginator__wrapper,
+.customers-header {
+  padding-left: 38px;
+  padding-right: 38px;
+
+  @media #{$breakpointSmall} {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.customers-list__fields {
+  align-items: flex-start;
+  border-bottom: 1px solid rgb(238, 238, 238);
+  padding-bottom: 15px;
+}
+
+
+.customer-field, .customers-list__field {
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  flex: 1 1;
+}
+
+.customers-list {
+  width: 100%;
+  margin-bottom: 30px;
+  overflow-y: auto;
+}
+
+.customers-list__field {
+  color: rgb(181, 183, 192);
+}
+
+.customer-field {
+  color: rgb(41, 45, 50);
+}
+
+
+.customer-status {
+  height: 30px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+
+
+  border: 1px solid rgb(223, 4, 4);
+  background: rgb(255, 197, 197);
+  color: rgb(223, 4, 4);
+
+  &.active {
+    border: 1px solid rgb(0, 176, 135);
+    background: rgba(22, 192, 152, 0.38);
+    color: rgb(0, 135, 103);
+  }
+}
+
+.customers-list__field, .customer-field {
+  word-break: break-all;
+}
+
+@media #{$breakpointMedium} {
+  .customer-field {
+    flex: 0 0 calc((100% / 3) - 15px);
+  }
+  .customer-name {
+    font-weight: 600;
+  }
+  .customer-country {
+    opacity: .5;
+  }
+  .customer-number,
+  .customer-email {
+    color: #535bf2;
+  }
+}
+
+@media #{$breakpointSmall} {
+  .customer-field {
+    flex: 0 0 calc((100% / 2) - 15px);
+  }
+}
+
+.customer-status, .customers-list__field.status {
+  flex: none;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customers-counter {
+  color: rgb(181, 183, 192);
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+}

@@ -1,0 +1,23 @@
+.content {
+  width: 100%;
+  height: 100%;
+  padding: 128px 36px 36px;
+  //overflow-y: auto;
+
+  @media #{$breakpointMedium} {
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 90px;
+  }
+}
+.greeting {
+  //margin-bottom: 50px;
+  color: rgb(0, 0, 0);
+  font-family: Poppins, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: left;
+  position: absolute;
+  top: 41px;
+}

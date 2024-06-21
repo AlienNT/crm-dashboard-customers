@@ -1,0 +1,44 @@
+@import "loader";
+@import "fonts";
+@import "variables";
+@import "normalize";
+@import "flex-grid";
+@import "sidebar";
+@import "navigation";
+@import "sidebar-burger";
+@import "user";
+@import "content";
+@import "customers";
+@import "paginator";
+
+:root {
+  background: rgb(250, 251, 255);
+}
+
+body {
+  overflow: hidden;
+}
+
+* {
+  &::-webkit-scrollbar {
+    background: lighten(rgb(89, 50, 234), 40%);
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgb(89, 50, 234);
+  }
+}
+
+.sidebar-col, .content-col {
+  height: var(--vh, 100%);
+}
+
+.content-col {
+  flex-direction: column;
+}
+
+.disable-scroll {
+  overflow: hidden;
+  height: 100vh;
+}

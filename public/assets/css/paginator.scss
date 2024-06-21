@@ -1,0 +1,56 @@
+.customers-paginator {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.customers-pages, .pages-list {
+  display: flex;
+  gap: 12px;
+  @media #{$breakpointSmall} {
+    gap: 6px;
+  }
+}
+
+.arrow-prew,
+.arrow-next,
+.pages-list .page {
+  border: 1px solid rgb(238, 238, 238);
+  border-radius: 4px;
+  background: rgb(245, 245, 245);
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(64, 75, 82);
+  font-family: Poppins, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 100%;
+
+  transition: .2s ease all;
+  cursor: pointer;
+
+  &.active {
+    border: 1px solid rgb(89, 50, 234);
+    background: rgb(89, 50, 234);
+    color: rgb(255, 255, 255);
+  }
+
+  @media #{$isMouseDevice} {
+    &:hover {
+      border: 1px solid rgb(89, 50, 234);
+      background: rgb(89, 50, 234);
+      color: rgb(255, 255, 255);
+    }
+  }
+}
+
+.arrow-prew,
+.arrow-next, {
+  width: 26px;
+
+}

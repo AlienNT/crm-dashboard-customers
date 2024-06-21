@@ -1,0 +1,62 @@
+.burger {
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px;
+
+  @media #{$breakpointLarge} {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .line,
+  .line:before,
+  .line:after {
+    transition: .2s ease;
+    background: #000;
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+  }
+
+  .line {
+    position: relative;
+
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      display: block;
+    }
+
+    &:before {
+      transform: translateY(6px);
+    }
+
+    &:after {
+      transform: translateY(-6px);
+    }
+  }
+
+  &.active {
+    .line {
+      background: transparent;
+      &:before {
+        transform: translateY(0) rotate(45deg);
+      }
+
+      &:after {
+        transform: translateY(0) rotate(-45deg);
+      }
+    }
+  }
+}

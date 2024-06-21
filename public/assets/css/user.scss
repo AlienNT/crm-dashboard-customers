@@ -1,0 +1,33 @@
+.user {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.user-name,
+.user-position {
+  font-family: Poppins, sans-serif;
+}
+
+.user-name {
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.user-position {
+  color: rgb(117, 117, 117);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}

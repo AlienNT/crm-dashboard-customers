@@ -1,0 +1,104 @@
+$navTransition: .5s background-color ease, .5s color ease;
+
+.navigation {
+  overflow-y: auto;
+}
+
+.navigation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: auto;
+}
+
+.navigation-link {
+  text-decoration: none;
+  color: rgb(145, 151, 179);
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -1%;
+  min-height: 46px;
+  padding: 13px;
+  border-radius: 8px;
+  display: flex;
+  gap: 15px;
+  position: relative;
+  align-items: center;
+  transition: $navTransition;
+  user-select: none;
+
+  .nav-content {
+    flex: 1;
+  }
+
+  &:after {
+    transition: $navTransition;
+    content: '';
+    display: none;
+    width: 16px;
+    height: 16px;
+    mask-repeat: no-repeat;
+    mask-position: center right;
+    mask-size: contain;
+    mask-image: url("public/assets/img/icons/chevron-right.svg");
+    justify-self: flex-end;
+  }
+
+  &.arrow {
+    &:after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      display: block;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      background-color: rgb(89, 50, 234);
+    }
+
+    &.active {
+      &:after {
+        background-color: rgb(255, 255, 255);
+      }
+    }
+
+    &:hover {
+      @media #{$isMouseDevice} {
+        &:after {
+          background-color: rgb(255, 255, 255);
+        }
+      }
+    }
+  }
+
+  .nav-icon {
+    width: 20px;
+    height: 20px;
+    mask-size: contain;
+    mask-position: left center;
+    mask-repeat: no-repeat;
+    background-color: rgb(145, 151, 179);
+  }
+
+  &:hover {
+    @media #{$isMouseDevice} {
+      background: rgb(89, 50, 234);
+      color: rgb(255, 255, 255);
+
+      .nav-icon {
+        background-color: rgb(255, 255, 255);
+      }
+    }
+  }
+
+  &.active, &:hover {
+    background: rgb(89, 50, 234);
+    color: rgb(255, 255, 255);
+
+    .nav-icon {
+      background-color: rgb(255, 255, 255);
+    }
+  }
+}
