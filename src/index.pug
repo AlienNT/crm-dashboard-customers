@@ -1,0 +1,12 @@
+block mixins
+    include mixins/mixins
+
+include components/loader
+main.main
+    include components/burger
+    .container
+        .row
+            .col.sidebar-col
+                include components/sidebar
+            .col.content-col
+                include components/content
