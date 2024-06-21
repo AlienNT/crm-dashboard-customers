@@ -1,0 +1,59 @@
+-
+    var fields = [
+        {
+            label: 'Customer Name',
+            name: 'name'
+        },
+        {
+            label: 'Company',
+            name: 'company'
+        },
+        {
+            label: 'Phone Number',
+            name: 'number'
+        },
+        {
+            label: 'Email',
+            name: 'email'
+        },
+        {
+            label: 'Country',
+            name: 'country'
+        },
+        {
+            label: 'Status',
+            name: 'status'
+        },
+    ]
+
+.customers
+    .customers-header
+        .customers-header__content
+            .customers-title All Customers
+            .customers-description Active Members
+        label.customers-search
+            input(type='search', placeholder='Search')
+    .customers-list__fields
+        if fields
+            each field in fields
+                +customerFieldName(field.name, field.label)
+
+
+    ul.customers-list
+        if customers && customers.length > 0
+            each customer in customers
+                li.customers-list__item
+                    +customerItem(
+                        customer.name,
+                        customer.company,
+                        customer.number,
+                        customer.email,
+                        customer.country,
+                        customer.status
+                    )
+        else
+            p not found
+
+
+    .customers-paginator__wrapper
+        include paginator

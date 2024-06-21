@@ -1,0 +1,11 @@
+a(class='user', href='/#')
+    img(
+        class='user-avatar',
+        src='/assets/img/content/user-photo.png',
+        alt='user photo'
+    )
+    .user-fields
+        if user.name
+            .user-name #{user.name}
+        if user.position
+            .user-position #{user.position}

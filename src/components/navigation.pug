@@ -1,0 +1,12 @@
+nav.navigation
+    ul.navigation-list
+        if navigation
+            each navigationLink in navigation
+                li.navigation-list__item
+                    +navLink(
+                        navigationLink.label,
+                        navigationLink.path,
+                        navigationLink.active,
+                        navigationLink.icon,
+                        navigationLink.isArrow
+                    )
