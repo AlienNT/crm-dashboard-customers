@@ -1,0 +1,24 @@
+block mixins
+    mixin customerItem(name, company, number, email, country, status)
+        .customer
+            .customer-field.customer-name #{name}
+            .customer-field.customer-company #{company}
+            a(href=`tel:${number}`).customer-field.customer-number #{number}
+            a(href=`mailto:${email}`).customer-field.customer-email #{email}
+            .customer-field.customer-country #{country}
+            if status
+                div(class=status ? 'active' : '').customer-field.customer-status Active
+            else
+                .customer-field.customer-status Inactive
+
+    mixin customerFieldName(name, label)
+        div(class=`customers-list__field ${name}`) #{label}
+
+    mixin navLink(label, path, active, icon, isArrow)
+        a(
+            class=`navigation-link ${active ? 'active' : ''} ${isArrow ? 'arrow': ''}`,
+            href=path,
+        )
+            span(class='nav-icon', style=`mask-image: url(${icon})`)
+            span.nav-content #{label}
+
